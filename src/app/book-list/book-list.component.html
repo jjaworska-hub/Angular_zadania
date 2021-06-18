@@ -1,0 +1,12 @@
+<app-book-form [inputTextTitle] = "bookTitle2" [inputAuthor]="bookAuthor" [inputDate]="bookDate" [inputPages]="bookPages" (eventTitle)="addedTitle($event)"></app-book-form>
+<ul>
+  <li *ngFor="let bookTitle of bookTitles" (click)="showDetails(bookTitle)">
+    {{bookTitle.title}}, {{bookTitle.author}}
+    <button type="button" class="btn btn-danger" (click)="remove(bookTitle)" >Usuń</button>
+  </li>
+</ul>
+<div>
+  {{userService.serviceVariable}}
+</div>
+<app-book-details [chosenTitle] = "chosenTitle2" ></app-book-details>
+
